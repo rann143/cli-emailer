@@ -5,7 +5,7 @@ Script to send emails from the command line
 - Clone repository
 - Install dependencies in requirements.txt
 - Create a .env file to hold your gmail credentials in environment variables USERNAME & PASS
-- Run script
+- Run script & follow input prompts for recipients email, subject line, and message body
 
 ## IMPORTANT
 - Use a separate gmail from your primary gmail if you have one. I'd recommend creating a new gmail to use this script
