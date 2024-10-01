@@ -3,7 +3,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from dotenv import load_dotenv
@@ -57,11 +56,6 @@ try:
     print("switched to iframe")
     gmail_button = wait.until( EC.element_to_be_clickable((By.XPATH, "//*[@id='yDmH0d']/c-wiz/div/div/c-wiz/div/div/div[2]/div[2]/div[1]/ul/li[7]/a")))
     gmail_button.click()
-    
-except TimeoutException:
-    print("Timed out waiting for element to appear")
-    browser.quit()  # Close the browser
-    sys.exit(1)  # Exit the program with a non-zero status code
 
 except Exception as e:
     print(f"An unexpected error occurred: {e}")
@@ -112,7 +106,7 @@ send_button.click()
 print("email sent successfully!")
 
 # Keep the browser open for a while to see the result
-time.sleep(1)
+time.sleep(5)
 browser.quit()
 
 
